@@ -2,4 +2,8 @@
 
 ## Flowchart menggunakan draiwo
 
-<img src="assets/screenshot(62).png" style="width:50%" />
+<img src="https://github.com/tafakkurtegar1-tech/form/blob/main/assets/Screenshot%20(61).png" style="width:50%" />
+
+## Tampilan halaman form page nya
+
+<img src="" style="width:50%" />
