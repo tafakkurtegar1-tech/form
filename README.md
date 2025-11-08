@@ -6,4 +6,4 @@
 
 ## Tampilan halaman form page nya
 
-<img src="https://github.com/tafakkurtegar1-tech/form/blob/main/assets/Screenshot%20(61).png" style="width:50%" />
+<img src="assets/Screenshot (61).png" style="width:50%" />
