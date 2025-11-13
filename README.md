@@ -6,4 +6,4 @@
 
 ## Tampilan halaman form page nya
 
-<img src="assets/Screenshot (64).png" style="width:50%" />
+<img src="assets/figma" style="width:50%" />
