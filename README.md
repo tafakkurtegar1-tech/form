@@ -6,4 +6,4 @@
 
 ## Tampilan halaman form page nya
 
-<img src="assets/figma" style="width:50%" />
+<img src="assets/figma/https://www.figma.com/design/yii60cBjakfL469upjEHrA/Untitled?node-id=0-1&t=X3z3LZtrQ3bbadNJ-1" style="width:50%" />
