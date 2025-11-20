@@ -30,7 +30,7 @@ function getStoredData() {
 function submitform(event) {
     event.preventDefault(); 
 
-    // Nilai input dari index.html
+    // Nilai input dari add.html
     const nameInput = document.getElementById('name').value.trim(); 
     const emailInput = document.getElementById('email').value.trim();
     const telephoneInput = document.getElementById('telephone').value.trim();
@@ -131,4 +131,5 @@ function clearAllStoredData() {
         displayStoredEntries(); 
     }
 }
+
 
