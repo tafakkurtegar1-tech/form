@@ -1,110 +1,65 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="en">
-<head>
+
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form web</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <script>
-        tailwind.config = {
-          theme: {
-            extend: {
-              colors: {
-                'custom-light-bg': '#efece3', // color from colorhunt.
-                'custom-dark-text': '#313647', // color from color hunt.
-                'custom-border': '#8fabd4', // color from color hunt.
-              },
-              animation: {
-                'pulse-custom': 'pulse 1.5s infinite',
-              },
-              keyframes: {
-                pulse: {
-                  '0%, 100%': { transform: 'scale(1)' },
-                  '50%': { transform: 'scale(1.05)' },
-                }
-              }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'custom-light-bg': '#efece3',
+              'custom-dark-text': '#313647',
+              'custom-border': '#8fabd4',
+              'custom-accent': '#8fa8d4',
             }
           }
         }
+      }
+
     </script>
-    
-    <style>
-        @keyframes puls {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-    </style>
-    
-    <title>Form Web</title>
-</head>
+  </head>
 
-<body class="font-sans m-[5vw] p-5 bg-no-repeat bg-cover 
-             bg-[url('assets/sea.jpg')]
-             min-h-screen"> 
-    
-    <div class="w-full max-w-md mx-auto p-5 rounded-lg shadow-lg 
+  <body class="font-sans min-h-screen p-5 bg-no-repeat bg-cover 
+             bg-[url('assets/sea.jpg')] flex items-center justify-center">
+
+    <div class="w-full max-w-lg mx-auto p-8 rounded-xl shadow-2xl 
                 backdrop-blur-md bg-opacity-70 
-                bg-white/10"
-                > 
-        <h2 class="text-xl text-center text-custom-border
-                   animate-[puls_1.5s_infinite]">
-            Contact Us
-        </h2>
-        
-        <form id="contacform" onsubmit="submitform(event)">
+                bg-white/10 text-custom-dark-text">
 
-            <label for="name" class="block mb-1">Name:</label>
-            <input type="text" id="name" name="name" required
-                   class="w-full p-2.5 mb-2.5 border border-custom-border 
-                   rounded-md bg-custom-light-bg box-border">
+      <header class="text-center mb-10">
+        <h1 class="text-4xl font-bold text-custom-border mb-2 ">
+          Digital Address Book.
+        </h1>
 
-            <label for="email" class="block mb-1">Email:</label>
-            <input type="email" id="email" name="email" required
-                   class="w-full p-2.5 mb-2.5 border border-custom-border 
-                   rounded-md bg-custom-light-bg box-border">
+      </header>
 
-            <label for="telephone" class="block mb-1">Telephone:</label>
-            <input type="tel" id="telephone" name="telephone" required
-                  class="w-full p-2.5 mb-2.5 border border-custom-border 
-                  rounded-md bg-custom-light-bg box-border">
+      <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
 
-            <label for="origin_city" class="block mb-1">Origin City:</label>
-            <input type="text" id="origin_city" name="origin_city" required
-                  class="w-full p-2.5 mb-2.5 border border-custom-border 
-                  rounded-md bg-custom-light-bg box-border">
+        <a href="add.html" class="py-3 px-6 bg-custom-accent text-white font-semibold 
+                      rounded-lg shadow-md hover:bg-custom-border 
+                      transition duration-300 ease-in-out text-center">
+          + Add Contact.
+        </a>
 
-            <label for="message" class="block mb-1">Message:</label>
-            <input type="message" id="message" name="message" rows="S" required
-                   class="w-full p-2.5 mb-2.5 border border-custom-border 
-                   rounded-md bg-custom-light-bg box-border">
+        <a href="list.html" class="py-3 px-6 bg-custom-light-bg text-custom-dark-text font-semibold 
+                      rounded-lg shadow-md hover:bg-custom-border 
+                      transition duration-300 ease-in-out text-center">
+          View Contact &rarr;
+        </a>
 
-            <button type="submit" 
-                    class="py-2.5 px-5 bg-custom-light-bg text-custom-dark-text 
-                    border-none rounded-md cursor-pointer 
-                    hover:bg-custom-border">
-                Submit
-            </button>
-            
-        </form>
+      </div>
 
-        <div class="mt-4 text-center">
+      <footer class="mt-10 pt-4 border-t border-custom-border text-center text-sm opacity-80">
+        <p>&copy; 2025 Application Contact. Dashboard Versi 1.0</p>
+      </footer>
 
-            <button type="button" onclick="window.location.href='list.html'"
-               class="inline-block py-2 px-4 bg-custom-border 
-               text-custom-dark-text border-none rounded-md cursor-pointer 
-              hover:bg-custom-light-bg text-sm font-semibold">
-               View List &rarr;
-            </button>
-
-        </div>
-        
     </div>
 
-    <script src="script/script.js"></script>
-    
-</body>
+  </body>
 
-</html>            
-
-
+</html>
