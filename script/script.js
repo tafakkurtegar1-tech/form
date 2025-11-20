@@ -6,7 +6,7 @@ const MAX_ENTRIES = 10;
 // FUNGSI NAVIGASI
 
 /**
- * Fungsi untuk menavigasi pengguna ke halaman daftar (list.html).
+ * Fungsi untuk ke halaman daftar list.html.
  */
 function goToListView() {
     window.location.href = 'list.html';
@@ -131,5 +131,6 @@ function clearAllStoredData() {
         displayStoredEntries(); 
     }
 }
+
 
 
