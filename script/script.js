@@ -35,7 +35,7 @@ function submitform(event) {
     
     let isValid = true; 
 
-    // 1. Validasi Input (Hanya memastikan tidak ada yang kosong)
+    // 1. Validasi Input
     if (nameInput === "") {
         alert("Peringatan: Nama harus diisi.");
         isValid = false; 
@@ -77,40 +77,5 @@ function submitform(event) {
         document.getElementById('contacform').reset();
         alert(`Contact saved successfully! Total saved: ${storedData.length}`);
         
-    }
-}
-
-// FUNGSI HAPUS SATU per SATU (DELETE)
-
-/**
- * Fungsi untuk menghapus data berdasarkan index.
- */
-function deleteEntry(index) {
-    if (!confirm("Are you sure you want to delete this CONTACT #" + (index + 1) + "?")) {
-        return; 
-    }
-    
-    let storedData = getStoredData();
-
-    // Hapus satu elemen pada index yang diberikan
-    storedData.splice(index, 1); 
-
-    // Simpan kembali data yang sudah diperbarui
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(storedData));
-
-    // Perbarui tampilan di list.html
-    displayStoredEntries();
-}
-
-// FUNGSI HAPUS SEMUA DATA (CLEAR)
-
-/**
- * Fungsi untuk menghapus semua kontak yang tersimpan di localStorage.
- */
-function clearAllStoredData() {
-    if (confirm("Are you sure you want to DELETE all saved CONTACTS?")) {
-        localStorage.removeItem(STORAGE_KEY);
-        alert("All saved contacts have been deleted!");
-        displayStoredEntries(); 
     }
 }
