@@ -1,19 +1,12 @@
 // KONFIGURASI LOCAL STORAGE
 
 const STORAGE_KEY = 'formDataEntries';
-const MAX_ENTRIES = 10; 
-
-// FUNGSI NAVIGASI
-
-/**
- * Fungsi untuk ke halaman daftar list.html.
- */
-function goToListView() {
-    window.location.href = 'list.html';
-}
 
 // FUNGSI UTAMA UNTUK MENGAMBIL DATA
 
+/**
+ * Mengambil data yang tersimpan dari LocalStorage.
+ */
 function getStoredData() {
     try {
         const stored = localStorage.getItem(STORAGE_KEY);
@@ -25,8 +18,11 @@ function getStoredData() {
     }
 }
 
-// FUNGSI SUBMIT  (CREATE/TAMBAH DATA)
+// FUNGSI SUBMIT (CREATE/TAMBAH DATA)
 
+/**
+ * add.html untuk menyimpan kontak.
+ */
 function submitform(event) {
     event.preventDefault(); 
 
@@ -37,11 +33,9 @@ function submitform(event) {
     const originCityInput = document.getElementById('origin_city').value.trim();
     const messageInput = document.getElementById('message').value.trim();
     
-    // VARIABEL UNTUK MELACAK STATUS VALIDASI
     let isValid = true; 
 
-    // 1. Validasi Input menggunakan if else if
-    
+    // 1. Validasi Input (Hanya memastikan tidak ada yang kosong)
     if (nameInput === "") {
         alert("Peringatan: Nama harus diisi.");
         isValid = false; 
@@ -59,8 +53,6 @@ function submitform(event) {
         isValid = false;
     } 
     
-    // PENGAMBILAN KEPUTUSAN YANG PENTING (IF ELSE)
-    // Hanya jalankan jika penyimpanan adalah isValid adalah TRUE
     if (isValid === true) { 
         
         // 2. Objek Data Baru
@@ -73,31 +65,22 @@ function submitform(event) {
             submittedAt: new Date().toLocaleString('id-ID')
         };
 
-        // 3. Ambil, Tambahkan, dan Batasi Data
+        // 3. Ambil dan Tambahkan Data (TANPA BATASAN)
         let storedData = getStoredData();
+    
         storedData.unshift(newEntry);
-
-        // Batasi data: Hapus entri terakhir jika sudah melebihi batas
-        if (storedData.length > MAX_ENTRIES) {
-            storedData.pop(); 
-        }
 
         // Simpan yang sudah diperbarui kembali ke localStorage
         localStorage.setItem(STORAGE_KEY, JSON.stringify(storedData));
 
         // 4. Feedback dan Reset Form
-    
         document.getElementById('contacform').reset();
+        alert(`Contact saved successfully! Total saved: ${storedData.length}`);
         
-        // Memberikan respon sukses melalui alert
-        alert(`Contact saved successfully! (${storedData.length}/${MAX_ENTRIES})`);
-        
-    } else {
-        // Blok ini akan jalan jika isValid adalah FALSE.
     }
 }
 
-// FUNGSI HAPUS SATU per SAtu (DELETE)
+// FUNGSI HAPUS SATU per SATU (DELETE)
 
 /**
  * Fungsi untuk menghapus data berdasarkan index.
@@ -131,6 +114,3 @@ function clearAllStoredData() {
         displayStoredEntries(); 
     }
 }
-
-
-
