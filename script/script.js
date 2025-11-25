@@ -1,145 +1,141 @@
-// 1. DATA KONTAK
-const contacts = [
+// 1. DATA KONTAK STATIS 
+const staticContacts = [
     {
         name: "Naruto Uzumaki",
         phone: "081234567890",
         email: "uzumaki@konoha.pg",
         originCity: "Konohagekure", 
-        message: "Pahlawan Konoha,Jinchuriki Kyubi." 
+        message: "Pahlawan Konoha,Jinchuriki Kyubi.",
+        isStatic: true // Untuk identifikasi
     },
     {
         name: "Sasuke Uchiha",
         phone: "085678901234",
         email: "uchiha@konoha.pg",
         originCity: "Konohagekure", 
-        message: "Sang pembunuh,The Last Uchiha" 
+        message: "Sang pembunuh,The Last Uchiha",
+        isStatic: true
     },
     {
         name: "Sakura Haruno",
         phone: "087890123456",
         email: "haruno@konoha.pg",
         originCity: "Konohagekure", 
-        message: "Sakura chan,Ninja medis."
+        message: "Sakura chan,Ninja medis.",
+        isStatic: true
     },
     {
         name: "Kakashi Hatake",
         phone: "082234567812",
         email: "hatake@konoha.pg",
         originCity: "Konohagekure", 
-        message: "Sang Sharingan, Ninja Salin." 
+        message: "Sang Sharingan, Ninja Salin." ,
+        isStatic: true
     },
     {
         name: "Gaara",
         phone: "085678345678",
         email: "gaara@sunagekure.pg",
         originCity: "Sunagakure (Desa Pasir)", 
-        message: "Sang pembunuh,Jinchuriki Shukaku." 
+        message: "Sang pembunuh,Jinchuriki Shukaku.",
+        isStatic: true
     },
     {
         name: "Itachi Uchiha",
         phone: "0878923980764",
         email: "itachi@konoha.pg",
         originCity: "Konohagekure", 
-        message: "Itachi Sang Pembunuh, Pahlawan Konoha."
+        message: "Itachi Sang Pembunuh, Pahlawan Konoha.",
+        isStatic: true
     },
     {
         name: "Orochimaru",
         phone: "081239087678",
         email: "maruorochi@konoha.pg",
         originCity: "Konohagekure", 
-        message: "Sang Ular, Mantan Sannin." 
+        message: "Sang Ular, Mantan Sannin.",
+        isStatic: true
     },
     {
         name: "Tsunade",
         phone: "085123456789",
         email: "tsunade@konoha.pg",
         originCity: "Konohagekure", 
-        message: "TSunade sang legenda, hokage Kelima." 
+        message: "TSunade sang legenda, hokage Kelima.",
+        isStatic: true
     },
     {
         name: "Jiraiya",
         phone: "087345678901",
         email: "jiraiya@konoha.pg",
         originCity: "Konohagekure", 
-        message: "Sang Toad, Sannin."
+        message: "Sang Toad, Sannin.",
+        isStatic: true
     },
     {
         name: "Minato Namikaze",
         phone: "081098765432",
         email: "namikaze@konoha.pg",
         originCity: "Konohagekure", 
-        message: "Minato Sang Kilat, Hokage Keempat." 
+        message: "Minato Sang Kilat, Hokage Keempat.",
+        isStatic: true
     },
     {
         name: "Kisame Hoshigaki",
         phone: "085234567812",
         email: "hoshigaki@kirigakure.pg",
         originCity: "Kirigakure (desa Psair)", 
-        message: "Kisame sang monster, Samehada" 
+        message: "Kisame sang monster, Samehada",
+        isStatic: true
     },
     {
         name: "Deidara",
         phone: "081234567890",
         email: "deidara@iwagakure.pg",
         originCity: "Iwagakure (Desa Batu)", 
-        message: "Deidara sang seniman."
+        message: "Deidara sang seniman.",
+        isStatic: true
     }
-
 ];
+// 2. Wrapper GRID Responsif
+    listHTML += `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">`;
 
-// 2. FUNGSI TAMPILAN (RENDER MENGGUNAKAN LOOP)
-
-function displayContacts() {
-    const targetContainer = document.getElementById('stored-data-list');
-    targetContainer.innerHTML = '';
-    
-    const contactList = document.createElement('ul'); 
-    
-    // Class untuk Grid Layout
-    contactList.classList.add(
-        'grid',
-        'grid-cols-1',
-        'md:grid-cols-3',
-        'gap-4',          
-        'list-none', 
-        'p-0'
-    );
-
-    // Looping menggunakan forEach
-    contacts.forEach(contact => {
+    filteredData.forEach((data, index) => { // Loop menggunakan filteredData
         
-        const listItem = document.createElement('li');
-        // Styling Contact Card dengan Tailwind CSS
-        listItem.classList.add(
-            'p-5', 'bg-white/60', 'rounded-lg', 'shadow-lg', 'border', 'border-custom-border', 'flex', 'flex-col', 'gap-3' 
-        );
-
-        listItem.innerHTML = `
-            <div class="flex justify-between items-start mb-3"> 
+        // Cek apakah data ini statis atau dinamis
+        const isStatic = data.isStatic === true;
+        
+        // Tentukan HTML tombol Delete
+        let deleteButtonHTML = `
+            <button onclick="deleteEntry(${index})"
+                    class="mt-3 py-1 px-2 text-xs bg-red-500 text-white rounded-md hover:bg-red-900 transition-colors self-end w-20 flex-none">
+                Delete
+            </button>
+        `;
+        
+        // KONTAK INDIVIDUAL
+        listHTML += `
+            <div class="p-4 rounded-lg shadow-md border-t-4 ${isStatic ? 'border-blue-500' : 'border-custom-border'} bg-white flex flex-col justify-between">
                 <div>
-                    <strong class="text-xl text-custom-dark-text">${contact.name}</strong> 
-                    <p class="text-sm text-gray-500 italic mt-0.5">Asal: ${contact.originCity}</p>
-                </div>
-            </div>
+                    <p class="text-xs text-right text-gray-500">${isStatic ? 'Data Statis' : 'Data User'}</p> 
 
-            <div class="grid grid-cols-1 gap-x-6 gap-y-1 text-sm text-custom-dark-text">
-                <p><span class="font-semibold">Telepon:</span> <a href="tel:${contact.phone}">${contact.phone}</a></p>
-                <p><span class="font-semibold">Email:</span> <a href="mailto:${contact.email}">${contact.email}</a></p>
-            </div>
-            
-            <div class="mt-2 p-3 bg-custom-light-bg rounded-md border border-gray-300">
-                <p class="text-xs font-semibold text-custom-dark-text mb-1">Pesan:</p>
-                <p class="text-sm text-gray-800">${contact.message}</p>
+                    ${!isStatic ? `<p class="text-sm font-semibold text-custom-dark-text mb-2">Saved: ${data.submittedAt}</p>` : ''}
+                    
+                    <p class="text-sm font-bold truncate">Name: ${data.name}</p>
+                    
+                    <p class="text-xs text-gray-600 truncate">Email: ${data.email}</p>
+
+                    <p class="text-xs text-gray-600 truncate mt-1">Telp: ${data.telephone || data.phone}</p>
+                    
+                    <p class="text-xs text-gray-700 truncate font-semibold">Origin City: ${data.originCity}</p>
+
+                    <p class="text-xs text-gray-700 italic mt-2">Message:</p>
+                    <p class="text-sm text-custom-dark-text break-words">${data.message}</p>
+                </div>
+                
+                ${deleteButtonHTML}
             </div>
         `;
-
-        contactList.appendChild(listItem);
     });
 
-    targetContainer.appendChild(contactList);
-}
-
-
-document.addEventListener('DOMContentLoaded', displayContacts);
-
-
+    listHTML += `</div>`; // Tutup Grid
