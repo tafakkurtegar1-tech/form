@@ -31,14 +31,14 @@
                 > 
         
         <h2 class="text-xl text-center text-custom-border mb-4">
-            Contact List
+            Daftar Kontak
         </h2>
 
         <div class="flex justify-between items-end mb-4">
             
             <div class="w-2/3 md:w-1/2">
                 <label for="search-input" class="block mb-1 text-sm font-semibold text-custom-dark-text">Cari Kontak:</label>
-                <input type="text" id="search-input" onkeyup="displayStoredEntries()" 
+                <input type="text" id="search-input" onkeyup="displayContacts()" 
                        placeholder="Ketik nama, email, atau kota untuk mencari..."
                        class="w-full p-2.5 border border-custom-border rounded-md bg-custom-light-bg box-border">
             </div>
@@ -49,12 +49,14 @@
                    class="py-1.5 px-3 bg-custom-border 
                    text-custom-dark-text border-none rounded-md cursor-pointer 
                    config:bg-custom-light-bg text-sm font-semibold">
-                   Add Contact +
+                   Tambah Kontak +
                 </button>
             </div>
         </div>
+        
         <div id="stored-data-list">
             </div>
+        
     </div>
 
     <script src="script/script.js"></script>
