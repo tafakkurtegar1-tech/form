@@ -1,5 +1,3 @@
-// File: script/script.js (Implementasi Data Statis dengan City & Message)
-
 // 1. DATA KONTAK STATIS (DENGAN CITY & MESSAGE)
 const contacts = [
     {
@@ -89,7 +87,6 @@ const contacts = [
 
 ];
 
-
 // 2. FUNGSI TAMPILAN (RENDER MENGGUNAKAN LOOP)
 
 function displayContacts() {
@@ -102,8 +99,8 @@ function displayContacts() {
     contactList.classList.add(
         'grid',
         'grid-cols-1',
-        'md:grid-cols-2', // 2 kolom di layar medium ke atas
-        'gap-6',          // Jarak 6 unit antar kartu
+        'md:grid-cols-2',
+        'gap-6',          
         'list-none', 
         'p-0'
     );
@@ -141,5 +138,6 @@ function displayContacts() {
 
     targetContainer.appendChild(contactList);
 }
+
 
 document.addEventListener('DOMContentLoaded', displayContacts);
