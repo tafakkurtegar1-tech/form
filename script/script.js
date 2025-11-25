@@ -99,8 +99,8 @@ function displayContacts() {
     contactList.classList.add(
         'grid',
         'grid-cols-1',
-        'md:grid-cols-2',
-        'gap-6',          
+        'md:grid-cols-3',
+        'gap-4',          
         'list-none', 
         'p-0'
     );
@@ -141,4 +141,5 @@ function displayContacts() {
 
 
 document.addEventListener('DOMContentLoaded', displayContacts);
+
 
