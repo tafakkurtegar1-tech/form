@@ -1,4 +1,4 @@
-// 1. DATA KONTAK STATIS (DENGAN CITY & MESSAGE)
+// 1. DATA KONTAK
 const contacts = [
     {
         name: "Naruto Uzumaki",
@@ -141,3 +141,4 @@ function displayContacts() {
 
 
 document.addEventListener('DOMContentLoaded', displayContacts);
+
