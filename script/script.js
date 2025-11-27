@@ -117,10 +117,10 @@ const contacts = [
       contacts.forEach(contact => { 
          const contactDiv = document.createElement('div');
          contactDiv.innerHTML = `
-            <h3>Nama: ${contact.name}</h3>
             <p>ID: ${contact.id}</p>
+            <h3>Nama: ${contact.name}</h3>
             <p>Telepon: ${contact.phone}</p>
-            <p>Desa Asal: ${contact.originCity}</p>
+            <p>Asal: ${contact.originCity}</p>
             <p>Pesan: <i>${contact.message}</i></p>
             <hr style="margin: 10px 0;">
         `;
@@ -134,5 +134,6 @@ displayContacts();
         searchInput.addEventListener('keyup', displayContacts);
 }
 });
+
 
 
