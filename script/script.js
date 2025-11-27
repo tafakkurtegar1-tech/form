@@ -1,62 +1,70 @@
 // 1. DATA KONTAK 
-const contact = [
+const contacts = [
     {
+        id: 1,
         name: "Naruto Uzumaki",
         phone: "081234567890",
         email: "uzumaki@konoha.pg",
         originCity: "Konohagekure", 
         message: "Pahlawan Konoha,Jinchuriki Kyubi.",
-        isStatic: true // Untuk identifikasi
+        
     },
     {
+        id: 2,
         name: "Sasuke Uchiha",
         phone: "085678901234",
         email: "uchiha@konoha.pg",
         originCity: "Konohagekure", 
         message: "Sang pembunuh,The Last Uchiha",
-        isStatic: true
+        
     },
     {
+        id: 3,
         name: "Sakura Haruno",
         phone: "087890123456",
         email: "haruno@konoha.pg",
         originCity: "Konohagekure", 
         message: "Sakura chan,Ninja medis.",
-        isStatic: true
+    
     },
     {
+        id: 4,
         name: "Kakashi Hatake",
         phone: "082234567812",
         email: "hatake@konoha.pg",
         originCity: "Konohagekure", 
         message: "Sang Sharingan, Ninja Salin." ,
-        isStatic: true
+        
     },
     {
+        id: 5,
         name: "Gaara",
         phone: "085678345678",
         email: "gaara@sunagekure.pg",
         originCity: "Sunagakure (Desa Pasir)", 
         message: "Sang pembunuh,Jinchuriki Shukaku.",
-        isStatic: true
+        
     },
     {
+        id: 6,
         name: "Itachi Uchiha",
         phone: "0878923980764",
         email: "itachi@konoha.pg",
         originCity: "Konohagekure", 
         message: "Itachi Sang Pembunuh, Pahlawan Konoha.",
-        isStatic: true
+        
     },
     {
+        id: 7,
         name: "Orochimaru",
         phone: "081239087678",
         email: "maruorochi@konoha.pg",
         originCity: "Konohagekure", 
         message: "Sang Ular, Mantan Sannin.",
-        isStatic: true
+        
     },
     {
+        id: 8,
         name: "Tsunade",
         phone: "085123456789",
         email: "tsunade@konoha.pg",
@@ -65,36 +73,40 @@ const contact = [
         isStatic: true
     },
     {
+        id: 9,
         name: "Jiraiya",
         phone: "087345678901",
         email: "jiraiya@konoha.pg",
         originCity: "Konohagekure", 
         message: "Sang Toad, Sannin.",
-        isStatic: true
+        
     },
     {
+        id: 10,
         name: "Minato Namikaze",
         phone: "081098765432",
         email: "namikaze@konoha.pg",
         originCity: "Konohagekure", 
         message: "Minato Sang Kilat, Hokage Keempat.",
-        isStatic: true
+        
     },
     {
+        id: 11,
         name: "Kisame Hoshigaki",
         phone: "085234567812",
         email: "hoshigaki@kirigakure.pg",
         originCity: "Kirigakure (desa Psair)", 
         message: "Kisame sang monster, Samehada",
-        isStatic: true
+        
     },
     {
+        id: 12,
         name: "Deidara",
         phone: "081234567890",
         email: "deidara@iwagakure.pg",
         originCity: "Iwagakure (Desa Batu)", 
         message: "Deidara sang seniman.",
-        isStatic: true
+        
     }
 ];
   function displayContacts() {
@@ -105,4 +117,5 @@ const contact = [
 }
 
 displayContacts(); 
+
 
