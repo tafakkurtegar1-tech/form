@@ -109,7 +109,7 @@ const contacts = [
         
     }
 ];
-// Fungsi Loop.
+// 2 Fungsi Loop.
   function displayContacts() {
     const container = document.getElementById('stored-data-list');
     
@@ -134,6 +134,7 @@ displayContacts();
         searchInput.addEventListener('keyup', displayContacts);
 }
 });
+
 
 
 
