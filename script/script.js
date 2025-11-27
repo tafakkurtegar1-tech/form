@@ -109,13 +109,24 @@ const contacts = [
         
     }
 ];
+// Fungsi Loop.
   function displayContacts() {
-  for (let index = 0; index < contacts.length; index++) {
-    const contact = contacts[index];
-    console.log(contact);
-  }
+    const container = document.getElementById('stored-data-list');
+    
+      container.innerHTML = ''; 
+      contacts.forEach(contact => { 
+         const contactDiv = document.createElement('div');
+         contactDiv.innerHTML = `
+            <h3>Nama: ${contact.name}</h3>
+            <p>ID: ${contact.id}</p>
+            <p>Telepon: ${contact.phone}</p>
+            <p>Desa Asal: ${contact.originCity}</p>
+            <p>Pesan: <i>${contact.message}</i></p>
+            <hr style="margin: 10px 0;">
+        `;
+         container.appendChild(contactDiv);
+    });
 }
 
-displayContacts(); 
 
 
