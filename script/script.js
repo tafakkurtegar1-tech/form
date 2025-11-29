@@ -127,13 +127,8 @@ const contacts = [
          container.appendChild(contactDiv);
     });
 }
-document.addEventListener('DOMContentLoaded', function() {
-displayContacts();
-    const searchInput = document.getElementById('search-input');
-    if (searchInput) {
-        searchInput.addEventListener('keyup', displayContacts);
-}
-});
+
+
 
 
 
