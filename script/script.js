@@ -95,7 +95,7 @@ function submitform(event) {
 
     addContact(newContact);
 
-    alert(`Kontak ${newContact.name} Kontak berhasil disimpan!`);
+    alert(`Kontak ${newContact.name} berhasil disimpan!`);
 
     clearForm();
 }
@@ -266,3 +266,4 @@ document.addEventListener('DOMContentLoaded', () => {
         displayStoredEntries();
     }
 });
+
