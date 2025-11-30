@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Kontak</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'custom-light-bg': '#efece3',
+                'custom-dark-text': '#313647',
+                'custom-border': '#8fabd4',
+              }
+            }
+          }
+        }
+    </script>
+</head>
+
+<body class="font-sans m-[5vw] p-5 bg-no-repeat bg-cover 
+             bg-[url('assets/sea.jpg')]
+             min-h-screen"> 
+    
+    <div class="w-full max-w-md mx-auto p-5 rounded-lg shadow-lg 
+                backdrop-blur-md bg-opacity-70 
+                bg-white/10"
+                > 
+        <h2 class="text-xl text-center text-custom-dark-text">
+            Edit Kontak
+        </h2>
+    <div class="mb-4 text-left">
+            
+            <button type="button" onclick="window.location.href='list.html'"
+               class="inline-block py-1 px-3 bg-blue-800 
+               text-white border-none rounded-md cursor-pointer 
+               config:bg-custom-light-bg text-sm font-semibold">
+                Kembali ke Daftar
+            </button>
+        </div>
+
+        <form id="edit-form" onsubmit="saveEditedContact(event)" class="mt-4">
+            
+            <label for="name" class="block mb-1">Nama:</label>
+            <input type="text" id="name" name="name" required
+                  class="w-full p-2.5 mb-2.5 border border-custom-border 
+                  rounded-md bg-custom-light-bg box-border">
+
+            <label for="email" class="block mb-1">Email:</label>
+            <input type="email" id="email" name="email" required
+                  class="w-full p-2.5 mb-2.5 border border-custom-border 
+                  rounded-md bg-custom-light-bg box-border">
+
+            <label for="telephone" class="block mb-1">Telepon:</label>
+            <input type="tel" id="telephone" name="telephone" required
+                  class="w-full p-2.5 mb-2.5 border border-custom-border 
+                  rounded-md bg-custom-light-bg box-border">
+
+            <label for="origin_city" class="block mb-1">Asal Kota:</label>
+            <input type="text" id="origin_city" name="origin_city" required
+                  class="w-full p-2.5 mb-2.5 border border-custom-border 
+                  rounded-md bg-custom-light-bg box-border">
+
+            <label for="message" class="block mb-1">Pesan:</label>
+            <input type="text" id="message" name="message" required
+                  class="w-full p-2.5 mb-2.5 border border-custom-border 
+                  rounded-md bg-custom-light-bg box-border">
+
+            <button type="submit" 
+                    class="py-2.5 px-5 bg-blue-900 text-white 
+                    border-none rounded-md cursor-pointer 
+                    hover:bg-blue-800 w-full font-bold">
+                Simpan Perubahan
+            </button>
+            
+        </form>
+        
+        <script src="script/script.js"></script>
+    </div>
+
+</body>
+</html>
