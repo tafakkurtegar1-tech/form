@@ -170,17 +170,6 @@ function saveEditedContact(event) {
 // --- 4. FUNGSI UNTUK HALAMAN LIST (list.html) ---
 // ----------------------------------------------------------------------
 
-/**
- * Menampilkan daftar kontak dalam bentuk GRID, termasuk fungsi pencarian.
- */
-// ----------------------------------------------------------------------
-// --- 4. FUNGSI UNTUK HALAMAN LIST (list.html) ---
-// ----------------------------------------------------------------------
-
-/**
- * Menampilkan daftar kontak dalam bentuk GRID, termasuk fungsi pencarian.
- */
-
   function displayStoredEntries() {
     loadContacts();
 
@@ -266,4 +255,5 @@ document.addEventListener('DOMContentLoaded', () => {
         displayStoredEntries();
     }
 });
+
 
