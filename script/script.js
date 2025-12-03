@@ -241,7 +241,7 @@ function confirmDelete(id) {
 
 
 // ----------------------------------------------------------------------
-// --- 5. EVENT LISTENER GLOBAL ---
+// --- 5. FUNGSI DOM ---
 // ----------------------------------------------------------------------
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -255,5 +255,6 @@ document.addEventListener('DOMContentLoaded', () => {
         displayStoredEntries();
     }
 });
+
 
 
